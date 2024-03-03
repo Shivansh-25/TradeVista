@@ -23,8 +23,9 @@ function TradingViewWidget() {
           "withdateranges": true,
           "allow_symbol_change": true,
           "watchlist": [
-            "BINANCE:BTCUSDT",
-            "NASDAQ:NVDA"
+            "NASDAQ:NVDA",
+            "OANDA:XAUUSD",
+            "NASDAQ:TSLA"
           ],
           "calendar": false,
           "support_host": "https://www.tradingview.com"

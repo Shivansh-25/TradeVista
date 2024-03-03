@@ -1,10 +1,11 @@
-// component
-import React from 'react';
-import { useFetchStocks } from '../Hooks/useFetchStocks';
-import StockInfo from './StockInfo';
+import React from "react";
+import { useFetchStocks } from "../Hooks/useFetchStocks";
+import StockInfo from "./StockInfo";
 
 const TopLosers = () => {
-  const { data, loading } = useFetchStocks('https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=G8GUQ1KETZSEZCOQ');
+  const { data, loading } = useFetchStocks(
+    "https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=G8GUQ1KETZSEZCOQ"
+  );
 
   if (loading) return <div>Loading...</div>;
 
@@ -16,7 +17,7 @@ const TopLosers = () => {
           symbol={stock.ticker}
           price={stock.price}
           changePercentage={stock.change_percentage}
-          isGainer = {false}
+          isGainer={false}
         />
       ))}
     </div>

@@ -8,7 +8,9 @@ export default function Home() {
   return (
     <Provider store={store}>
       <>
-        <First />
+        <div className="bg-[#1b1b1b] min-h-[100vh]">
+          <First />
+        </div>
       </>
     </Provider>
   );
