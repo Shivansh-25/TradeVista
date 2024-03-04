@@ -12,6 +12,7 @@ import Trial from "../Components/trial";
 import SearchBar from "../Components/SearchBar";
 import NavBar from "../Components/NavBar";
 import Blackbox from "../Components/BlackBox";
+import BuyInfo from "../Components/BuyInfo";
 
 export default function First() {
   const count = useSelector((state) => state.counter.value);
@@ -33,13 +34,16 @@ export default function First() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center mt-10 p-3">
-          <div className="rounded-full bg-black text-white border border-white p-3 mr-20">
+        {/* <div className="flex justify-center mt-10 p-3">
+          <div className="rounded-full bg-black text-white border border-white p-3 mr-[40vw]">
             Virtual Balance
           </div>
           <div className="rounded-full bg-black text-white border border-white p-3">
             Real Balance
           </div>
+        </div> */}
+        <div className="p-3">
+          <BuyInfo />
         </div>
       </div>
     </>

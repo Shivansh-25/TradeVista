@@ -137,22 +137,28 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
+    <div className="flex-col">
       <input
         type="text"
         value={input}
         onChange={handleInputChange}
+        onBlur={() => setShowDropdown(false)}
         placeholder="Search (min 2 characters)"
         className="border-white border-2 text-white bg-black h-10 w-[20vw] p-2 rounded-md"
       />
       {showDropdown && (
-        <ul>
-          {filteredData.map((item, index) => (
-            <li key={index}>
-              {item["1. symbol"]} - {item["2. name"]}
-            </li>
-          ))}
-        </ul>
+        <div className="z-10 absolute bg-[#848383] rounded-lg mt-3 w-[20vw]">
+          <ul className="mt-3 text-black">
+            {filteredData.map((item, index) => (
+              <li
+                key={index}
+                className="mb-2 p-1 border-black border-2 rounded-md m-2"
+              >
+                {item["1. symbol"]} - {item["2. name"]}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );
