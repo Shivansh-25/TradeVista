@@ -3,11 +3,9 @@ pragma solidity ^0.8.0;
 
 contract StocksContract {
     uint256 public nextStockId;
-
-    constructor() {
-        nextStockId = 1; // Start stock IDs from 1
+    constructor(){
+        nextStockId = 0;
     }
-
     struct Stock {
         uint256 id;
         string symbol;
@@ -24,6 +22,6 @@ contract StocksContract {
         Stock memory newStock = Stock(nextStockId, _symbol, _name, _price, true, _eventType, block.timestamp);
         stocks[nextStockId] = newStock;
         nextStockId++;
-        return nextStockId - 1; // Return the ID of the created stock
+        return nextStockId - 1; 
     }
 }
