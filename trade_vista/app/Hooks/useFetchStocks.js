@@ -439,8 +439,10 @@ export const useFetchStocks = (url) => {
           },
         ],
       };
-
-      setData(demoData || responseData);
+      console.log(responseData)
+      setData(responseData)
+      if(responseData.Information)
+        setData(demoData)
       console.log(demoData)
       setLoading(false);
     }
