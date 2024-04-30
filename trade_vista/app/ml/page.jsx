@@ -41,25 +41,54 @@ function page() {
 
   return (
     <>
-      <div>This is the ML page</div>
-      <input
-        type="text"
-        className="text-black"
-        value={companySymbol}
-        onChange={handleSymbolChange}
-        placeholder="Enter Company Symbol"
-      />
-      <button onClick={getPlotImage}>Click to show plot</button>
-      {closingValue && (
-        <img src={URL.createObjectURL(closingValue)} alt="Stock Price Plot" />
-      )}
-      <button onClick={getPredictedStock}>Click to show prediction</button>
-      {predictionImage && (
-        <img
-          src={URL.createObjectURL(predictionImage)}
-          alt="Stock Price Plot"
-        />
-      )}
+      <div className="flex flex-col justify-evenly items-center w-[100vw] h-[100vh]">
+        {" "}
+        <div className="m-2 p-2">
+          <h1 className="text-2xl">Predict the rise and fall of stocks</h1>
+        </div>
+          <div className="flex flex-col ">
+            <input
+              type="text"
+              className="text-black rounded-md p-2 m-2 "
+              value={companySymbol}
+              onChange={handleSymbolChange}
+              placeholder="Enter Company Symbol"
+            />
+            <button
+              className="bg-slate-300 rounded-md p-2 text-black"
+              onClick={getPlotImage}
+            >
+              Show plot
+            </button>
+            {closingValue && (
+              <img
+                src={URL.createObjectURL(closingValue)}
+                alt="Stock Price Plot"
+              />
+            )}
+          </div>
+          <div className="flex flex-col">
+            <input
+              type="text"
+              className="text-black rounded-md p-2 m-2"
+              value={companySymbol}
+              onChange={handleSymbolChange}
+              placeholder="Enter Company Symbol"
+            />
+            <button
+              className="bg-slate-300 rounded-md p-2 text-black"
+              onClick={getPredictedStock}
+            >
+              Click to show prediction
+            </button>
+            {predictionImage && (
+              <img
+                src={URL.createObjectURL(predictionImage)}
+                alt="Stock Price Plot"
+              />
+            )}{" "}
+          </div>
+        </div>
     </>
   );
 }
